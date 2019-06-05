@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
+        <View style={styles.container}>
           <Header headerText="Redux-with react-native" />
           <LibrariesList />
         </View>
@@ -20,4 +20,8 @@ class App extends Component {
 }
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});

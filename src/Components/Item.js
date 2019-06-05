@@ -5,9 +5,10 @@ import { CardSection } from "./Common";
 class Item extends Component {
   render() {
     const data = this.props.library.item;
+    const { Titles } = styles;
     return (
       <CardSection>
-        <Text>{data.title}</Text>
+        <Text style={Titles}>{data.title}</Text>
       </CardSection>
     );
   }
@@ -19,5 +20,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center"
+  },
+  Titles: {
+    fontSize: 20,
+    paddingLeft: 5,
+    fontWeight: "bold"
   }
 });
