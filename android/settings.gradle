@@ -1,0 +1,3 @@
+rootProject.name = 'React_Native_Redux_Boilerplate'
+
+include ':app'
