@@ -4,14 +4,15 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducers from "./Reducers";
 import { Header } from "./Components/Common";
+import LibrariesList from "./Components/LibariesList";
 
 class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
         <View>
-          <Header headerText="Redux-Boilerplate" />
-          <Text>meeApp</Text>
+          <Header headerText="Redux-with react-native" />
+          <LibrariesList />
         </View>
       </Provider>
     );
