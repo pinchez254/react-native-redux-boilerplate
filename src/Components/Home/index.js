@@ -1,7 +1,7 @@
 import { createDrawerNavigator, createStackNavigator } from "react-navigation";
 import React, { Component } from "react";
 import TabNavigator from "./Tabs";
-import { Icon } from "native-base";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const TabStackNavigator = createStackNavigator(
   {
@@ -12,7 +12,7 @@ const TabStackNavigator = createStackNavigator(
           headerTitle: "Redux boiler",
           headerLeft: (
             <Icon
-              name="home"
+              name="md-menu"
               style={{ paddingLeft: 10 }}
               size={32}
               color="blue"
