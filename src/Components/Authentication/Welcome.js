@@ -10,12 +10,19 @@ class WelcomeScreen extends Component {
         <Header headerText="welcome screen" />
 
         <Content style={StyleSheet.Content}>
-          <Button full light>
-            <Text>login</Text>
-          </Button>
-          <Button full>
-            <Text>signUp</Text>
-          </Button>
+          <View style={{ flex: 1 }} />
+          <View style={{ flex: 1 }}>
+            <Button
+              full
+              light
+              onPress={() => this.props.navigation.navigate("Login")}
+            >
+              <Text>login</Text>
+            </Button>
+            <Button full>
+              <Text>signUp</Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     );

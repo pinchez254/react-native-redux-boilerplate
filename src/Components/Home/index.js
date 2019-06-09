@@ -1,21 +1,30 @@
-import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Header } from "../Common";
-import LibrariesList from "../LibariesList";
-class HomeScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header headerText="Redux-with react-native" />
-        <LibrariesList />
-      </View>
-    );
-  }
-}
-export default HomeScreen;
+import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
+import React, { Component } from 'react';
+import TabNavigator from './Tabs';
+import { Icon } from 'native-base';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
+const TabStackNavigator = createStackNavigator(
+  {
+    TabNavigator: TabNavigator,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        header: null,
+      };
+    },
   }
-});
+);
+const Drawer = createDrawerNavigator({
+  Home: TabStackNavigator,
+},
+{
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        header: null,
+      };
+    },
+  }
+);
+
+export default Drawer;

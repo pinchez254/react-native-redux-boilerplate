@@ -2,7 +2,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import WelcomeScreen from "./Welcome";
 import LoginScreen from "./Login";
 import SignUpScreen from "./Signup";
-// import Drawer from '../MainRoutes/Drawer/DrawerNavigator'
+import Drawer from "../Home";
 
 const AuthRoutes = createStackNavigator(
   {
@@ -23,7 +23,8 @@ const AuthRoutes = createStackNavigator(
       navigationOptions: {
         headerTitle: "SignUp"
       }
-    }
+    },
+
     /* Walkthrough: {
       screen: Walkthrough,
       navigationOptions: {
@@ -31,12 +32,13 @@ const AuthRoutes = createStackNavigator(
         header: '',
       },
     },
+    */
     Drawer: {
       screen: Drawer,
       navigationOptions: {
-        header: null,
-      },
-    },*/
+        header: null
+      }
+    }
   },
   {
     initialRouteName: "Welcome",
