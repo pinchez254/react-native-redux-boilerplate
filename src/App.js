@@ -3,17 +3,13 @@ import { View, Text, StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducers from "./Reducers";
-import { Header } from "./Components/Common";
-import LibrariesList from "./Components/LibariesList";
-
+import AppNavigator from "../src/Components/Home";
+import AuthRoutes from '../src/Components/Authentication'
 class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View style={styles.container}>
-          <Header headerText="Redux-with react-native" />
-          <LibrariesList />
-        </View>
+        <AuthRoutes />
       </Provider>
     );
   }

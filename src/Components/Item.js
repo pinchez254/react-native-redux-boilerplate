@@ -1,10 +1,20 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  LayoutAnimation,
+  Animated
+} from "react-native";
 import { CardSection } from "./Common";
 import { connect } from "react-redux";
 import * as actions from "../Actions";
 
 class Item extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.spring();
+  }
   render() {
     const data = this.props.library.item;
     const { title, id } = data;
@@ -17,7 +27,11 @@ class Item extends Component {
           <CardSection>
             <Text style={Titles}>{data.title}</Text>
           </CardSection>
-          {expanded ? <Text>{data.description}</Text> : null}
+          <CardSection>
+            {expanded ? (
+              <Text style={{ flex: 1 }}>{data.description}</Text>
+            ) : null}
+          </CardSection>
         </View>
       </TouchableWithoutFeedback>
     );
